@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Reservation System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bus Reservation System</h1>
+        <form id="reservationForm">
+            <!-- Source and Destination -->
+            <label for="source">Source:</label>
+            <select id="source" name="source">
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+            </select>
+
+            <label for="destination">Destination:</label>
+            <select id="destination" name="destination">
+                <option value="delhi">Delhi</option>
+                <option value="mumbai">Mumbai</option>
+                <option value="bangalore">Bangalore</option>
+            </select>
+
+            <!-- Travel Date -->
+            <label for="travelDate">Travel Date:</label>
+            <input type="date" id="travelDate" name="travelDate">
+
+            <!-- Bus List -->
+            <div id="busList">
+                <h3>Available Buses</h3>
+                <div class="bus" data-fare="500">
+                    <p>Bus 1 - Fare: ₹500</p>
+                    <button type="button" class="selectBus" onclick="selectBus(this)">Select</button>
+                </div>
+                <div class="bus" data-fare="600">
+                    <p>Bus 2 - Fare: ₹600</p>
+                    <button type="button" class="selectBus" onclick="selectBus(this)">Select</button>
+                </div>
+                <div class="bus" data-fare="700">
+                    <p>Bus 3 - Fare: ₹700</p>
+                    <button type="button" class="selectBus" onclick="selectBus(this)">Select</button>
+                </div>
+            </div>
+
+            <!-- Seat Selection -->
+            <h3>Select Seats</h3>
+            <div id="seatLayout">
+                <div class="seat" onclick="toggleSeat(this)">A1</div>
+                <div class="seat" onclick="toggleSeat(this)">A2</div>
+                <div class="seat" onclick="toggleSeat(this)">B1</div>
+                <div class="seat" onclick="toggleSeat(this)">B2</div>
+                <div class="seat" onclick="toggleSeat(this)">C1</div>
+                <div class="seat" onclick="toggleSeat(this)">C2</div>
+            </div>
+
+            <!-- Total Fare -->
+            <div id="totalFare">
+                <p>Total Fare: ₹<span id="fare">0</span></p>
+            </div>
+
+            <!-- Booking Confirmation -->
+            <button type="button" onclick="confirmBooking()">Confirm Booking</button>
+        </form>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
